@@ -38,12 +38,12 @@ def save_to_wordlist(username_wordlist: list):
 
 # creates every possible pattern for a username
 def username_patterns(first: str, last: str, company_name: str):
-    conventions_list = [f'{first}{last}', f'{first}.{last}', f'{first}-{last}', f'{first[0]}{last}', f'{last}{first}',
+    patterns_list = [f'{first}{last}', f'{first}.{last}', f'{first}-{last}', f'{first[0]}{last}', f'{last}{first}',
                         f'{first}{last[0]}', f'{first}_{last}', f'{last}_{first}']
     # if the user if the user inputted a company name
     if company_name != '':
-        list_with_company = [f'{username}@{company_name}.com' for username in conventions_list]
-        return conventions_list + list_with_company
+        company_patterns_list = [f'{username}@{company_name}.com' for username in conventions_list]
+        return patterns_list + company_patterns_list
     return conventions_list
 
 
