@@ -1,8 +1,8 @@
 def main():
     welcome()
     company_name = input("input company name(if there is no company, press Enter): ").strip()
-    user_file = input("input the your filename: ")
-    user_file = read_username_list(user_file)
+    filename = input("input the your filename: ")
+    user_file = read_username_list(filename)
     write_wordlist((name_list(user_file)), company_name)
     print('Username wordlist generated at UsernameWordList.txt')
 
