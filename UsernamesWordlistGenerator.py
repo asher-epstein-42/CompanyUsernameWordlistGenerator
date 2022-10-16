@@ -42,9 +42,9 @@ def username_patterns(first: str, last: str, company_name: str):
                         f'{first}{last[0]}', f'{first}_{last}', f'{last}_{first}']
     # if the user if the user inputted a company name
     if company_name != '':
-        company_patterns_list = [f'{username}@{company_name}.com' for username in conventions_list]
+        company_patterns_list = [f'{username}@{company_name}.com' for username in patterns_list]
         return patterns_list + company_patterns_list
-    return conventions_list
+    return patterns_list
 
 
 def welcome():
