@@ -1,7 +1,7 @@
 def main():
     welcome()
     company_name = input("input company name(if there is no company, press Enter): ").strip()
-    filename = input("input the your filename: ")
+    filename = input("input your filename: ")
     user_file = read_username_list(filename)
     write_wordlist((name_list(user_file)), company_name)
     print('Username wordlist generated at UsernameWordList.txt')
@@ -36,11 +36,11 @@ def save_to_wordlist(username_wordlist: list):
         f.write(f"{username}\n")
 
 
-# creates every possible pattern for a username
+# creates possible patterns for a username
 def username_patterns(first: str, last: str, company_name: str):
     patterns_list = [f'{first}{last}', f'{first}.{last}', f'{first}-{last}', f'{first[0]}{last}', f'{last}{first}',
-                        f'{first}{last[0]}', f'{first}_{last}', f'{last}_{first}']
-    # if the user if the user inputted a company name
+                     f'{first}{last[0]}', f'{first}_{last}', f'{last}_{first}']
+    # if the user inputted a company name
     if company_name != '':
         company_patterns_list = [f'{username}@{company_name}.com' for username in patterns_list]
         return patterns_list + company_patterns_list
@@ -56,5 +56,3 @@ def welcome():
 
 if __name__ == '__main__':
     main()
-
-
